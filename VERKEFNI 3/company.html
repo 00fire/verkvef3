@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}bensinstodvar{% endblock %}
+{% block content %}
+
+<table>
+    <caption>
+        alliar stodvar fyrirtaekisins
+    </caption>
+    <tr>
+        <th>firiaeki</th>
+        <th>stadur</th>
+    </tr>
+    {% set cnt= [] %}
+    {% for item in gogn["results"]%}
+    <tr>
+        {% for item.company == cos %}
+        {% do cnt.append(item.company) %}
+        <td> {{item.company }}</td>
+        <td><a href="/moreinfo{{ item.key}}">{{ item.name }}</a></td>
+        {% endfor %}
+    </tr>
+</table>
+<h3>fjolda stodva {{ cnt | length }}</h3>
+
+
+(% endblock %)

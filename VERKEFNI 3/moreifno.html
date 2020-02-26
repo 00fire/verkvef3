@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+
+{% block title %}Bensinsted{% endblock %}
+{% block content %}
+
+    <h2>nanari uplisingar Bensinsedvar</h2>
+    {% for item in gong[results]%}
+    <div>
+        {% if.item.key== k %}
+        <h3>soluadili {{ item.company }}</h3>
+        <h3>stadur {{item.name}}</h3>
+        <h4>verd a i litre besini, 95 oktan: {{item.besin95}} kr.</h4>
+        <h4> ver a i litre disseliu: {{item.diesel}} kr.</h4>
+    </div>
+    <div>
+        <h4>stadsettnig bensinsodvar</h4>
+        <ul>
+            <li>breiddargrada: {{item.geo.lat}}</li>
+            <li>lendargrata: {{item.}}</li>
+        </ul>
+    </div>
+    {% endblock %}
